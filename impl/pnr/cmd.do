@@ -1,0 +1,15 @@
+-d C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\gwsynthesis\BM13XX_FPGA.vg
+-p GW5A-25A-MBGA121N-1
+-pn GW5A-LV25MG121NC1/I0
+-cst C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\BM13XX_FPGA.cst
+-cfg C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-correct_hold 1
+-route_maxfan 23
+-global_freq 100.000
+-enable_dsrm 0

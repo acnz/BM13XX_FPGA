@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/SPI_com.v",
+  "InstLine" : 1,
+  "InstName" : "spi_slave_pingpong",
+  "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/SPI_com.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "spi_slave_pingpong"
+ }
+]
