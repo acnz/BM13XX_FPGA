@@ -23,7 +23,7 @@ Compiling module 'ch'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-fun
 Compiling module 'maj'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":55)
 Compiling module 's0'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":65)
 Compiling module 's1'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":76)
-WARN  (EX3791) : Expression size 29 truncated to fit in target size 28("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\miner_core.v":74)
+WARN  (EX3791) : Expression size 29 truncated to fit in target size 28("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\miner_core.v":82)
 NOTE  (EX0101) : Current top module is "top_miner"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

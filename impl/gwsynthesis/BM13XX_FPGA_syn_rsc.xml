@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top_miner" T_Register="2835(0)" T_Alu="614(0)" T_Lut="2060(0)">
- <SubModule name="spi_inst" Register="936" Alu="38" Lut="186" T_Register="936(936)" T_Alu="38(38)" T_Lut="186(186)"/>
- <SubModule name="core_inst" Register="875" Lut="660" T_Register="1899(875)" T_Alu="576(0)" T_Lut="1874(660)">
-  <SubModule name="core_engine" Register="256" Alu="384" Lut="799" T_Register="1024(256)" T_Alu="576(384)" T_Lut="1214(799)">
-   <SubModule name="HASHERS[0].U" Register="768" Alu="192" Lut="223" T_Register="768(768)" T_Alu="192(192)" T_Lut="415(223)">
+<Module name="top_miner" T_Register="2835(0)" T_Alu="614(0)" T_Lut="2098(0)">
+ <SubModule name="spi_inst" Register="936" Alu="38" Lut="193" T_Register="936(936)" T_Alu="38(38)" T_Lut="193(193)"/>
+ <SubModule name="core_inst" Register="875" Lut="659" T_Register="1899(875)" T_Alu="576(0)" T_Lut="1905(659)">
+  <SubModule name="core_engine" Register="256" Alu="384" Lut="802" T_Register="1024(256)" T_Alu="576(384)" T_Lut="1246(802)">
+   <SubModule name="HASHERS[0].U" Register="768" Alu="192" Lut="252" T_Register="768(768)" T_Alu="192(192)" T_Lut="444(252)">
     <SubModule name="e0_blk" Lut="32" T_Lut="32(32)"/>
     <SubModule name="e1_blk" Lut="32" T_Lut="32(32)"/>
     <SubModule name="ch_blk" Lut="32" T_Lut="32(32)"/>
