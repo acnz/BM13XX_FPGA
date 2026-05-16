@@ -2,21 +2,17 @@ module miner_core (
     input wire clk_50m,
     input wire rst_n,
 
-    // Interface com o Job Receiver
     input wire         new_job_pulse,
     input wire [255:0] in_midstate,
     input wire [95:0]  in_data,
 
-    // Interface com a FIFO
     output reg         nonce_found,
     output reg [31:0]  out_nonce
 );
 
     reg [31:0] nonce;
-    
-    // Sinais de controle exclusivos do motor de 2011
-    reg [5:0]  cnt;       // Conta de 0 a 63
-    reg        feedback;  // 0 = Carrega bloco novo, 1 = Fica girando e calculando
+    reg [5:0]  cnt;       
+    reg        feedback;  
 
     reg  [255:0] sha_state_in;
     reg  [511:0] sha_data_in;
@@ -28,28 +24,33 @@ module miner_core (
     };
 
     reg [3:0] state;
-    localparam S_START_H1 = 0;
-    localparam S_BUSY_H1  = 1;
-    localparam S_LATCH_H1 = 2;
-    localparam S_WAIT_H1  = 3;
-    localparam S_START_H2 = 4;
-    localparam S_BUSY_H2  = 5;
-    localparam S_LATCH_H2 = 6;
-    localparam S_WAIT_H2  = 7;
-    localparam S_CHECK    = 8;
+    localparam S_START_H1  = 0;
+    localparam S_BUSY_H1   = 1;
+    localparam S_LATCH_H1  = 2;
+    localparam S_WAIT_H1_A = 3;  
+    localparam S_WAIT_H1_B = 4;  
+    localparam S_START_H2  = 5;
+    localparam S_BUSY_H2   = 6;
+    localparam S_LATCH_H2  = 7;
+    localparam S_WAIT_H2_A = 8;  
+    localparam S_WAIT_H2_B = 9;  
+    localparam S_CHECK     = 10;
 
     reg [255:0] hash1_result;
 
-    // Instanciação correta do motor antigo
+    // --- TEMPORIZADOR E A "STICKY FLAG" ---
+    reg [27:0] heartbeat_timer;
+    reg        pending_heartbeat; // A Bandeira!
+
     sha256_transform #(
-        .LOOP(64) // Força o desenrolamento a usar apenas 1 módulo motor
+        .LOOP(64) 
     ) core_engine (
         .clk(clk_50m),
         .feedback(feedback),
         .cnt(cnt),
         .rx_state(sha_state_in),
         .rx_input(sha_data_in),
-        .tx_hash(sha_hash_out) // O resultado sai por aqui
+        .tx_hash(sha_hash_out) 
     );
 
     always @(posedge clk_50m or negedge rst_n) begin
@@ -60,8 +61,18 @@ module miner_core (
             cnt <= 6'd0;
             feedback <= 1'b0;
             out_nonce <= 32'd0;
+            heartbeat_timer <= 28'd0;
+            pending_heartbeat <= 1'b0;
         end else begin
             nonce_found <= 1'b0; 
+
+            // Conta livremente, independente do estado da máquina!
+            if (heartbeat_timer == 28'd250_000_000) begin
+                heartbeat_timer <= 28'd0;
+                pending_heartbeat <= 1'b1; // Levanta a bandeira
+            end else begin
+                heartbeat_timer <= heartbeat_timer + 1;
+            end
 
             if (new_job_pulse) begin
                 nonce <= 32'd0;
@@ -69,37 +80,32 @@ module miner_core (
             end else begin
                 case (state)
                     
-                    // --- ETAPA 1: O Primeiro Hash (Midstate) ---
                     S_START_H1: begin
                         sha_state_in <= in_midstate;
                         sha_data_in  <= {in_data, nonce, 32'h80000000, 288'b0, 64'd640};
-                        cnt          <= 6'd0;    // Começa na rodada 0
-                        feedback     <= 1'b0;    // Diz ao motor: "Engula esses dados!"
+                        cnt          <= 6'd0;    
+                        feedback     <= 1'b0;    
                         state        <= S_BUSY_H1;
                     end
 
                     S_BUSY_H1: begin
-                        feedback <= 1'b1;        // Diz ao motor: "Calcule!"
+                        feedback <= 1'b1;        
                         cnt <= cnt + 6'd1;
-                        // No ciclo 63, o motor estará calculando o último round
-                        if (cnt == 6'd63) begin
-                            state <= S_LATCH_H1;
-                        end
+                        if (cnt == 6'd63) state <= S_LATCH_H1;
                     end
 
                     S_LATCH_H1: begin
                         feedback <= 1'b0; 
-                        // O truque desse motor: ao descer o feedback para 0, 
-                        // ele soma o estado original com o resultado final no próximo clock.
-                        state <= S_WAIT_H1;
+                        state <= S_WAIT_H1_A;
                     end
 
-                    S_WAIT_H1: begin
-                        hash1_result <= sha_hash_out; // Salva o Hash 1 em segurança
+                    S_WAIT_H1_A: state <= S_WAIT_H1_B;
+
+                    S_WAIT_H1_B: begin
+                        hash1_result <= sha_hash_out; 
                         state <= S_START_H2;
                     end
 
-                    // --- ETAPA 2: O Segundo Hash (Digest) ---
                     S_START_H2: begin
                         sha_state_in <= SHA256_INIT;
                         sha_data_in  <= {hash1_result, 32'h80000000, 160'b0, 64'd256};
@@ -111,32 +117,32 @@ module miner_core (
                     S_BUSY_H2: begin
                         feedback <= 1'b1;
                         cnt <= cnt + 6'd1;
-                        if (cnt == 6'd63) begin
-                            state <= S_LATCH_H2;
-                        end
+                        if (cnt == 6'd63) state <= S_LATCH_H2;
                     end
 
                     S_LATCH_H2: begin
                         feedback <= 1'b0;
-                        state <= S_WAIT_H2;
+                        state <= S_WAIT_H2_A;
                     end
 
-                    S_WAIT_H2: begin
-                        state <= S_CHECK;
-                    end
+                    S_WAIT_H2_A: state <= S_WAIT_H2_B;
 
-                    // --- ETAPA 3: Verificar a Vitória ---
+                    S_WAIT_H2_B: state <= S_CHECK;
+
                     S_CHECK: begin
-                        // O fpgaminer cospe os dados em Big-Endian. A verificação final 
-                        // exigirá inverter os bytes, mas para testar o circuito no simulador:
-                        if (sha_hash_out[255:240] == 16'h0000) begin 
+                        // Dificuldade reduzida para apenas 1 HEX (4 bits)! Chance de 1 em 16.
+                        // Vai gerar muito sucesso para provar que a FSM não travou.
+                        if (sha_hash_out[255:252] == 4'h0 || sha_hash_out[3:0] == 4'h0 || pending_heartbeat) begin 
                             out_nonce   <= nonce;
                             nonce_found <= 1'b1;
+                            pending_heartbeat <= 1'b0; // Abaixa a bandeira
                         end
                         
                         nonce <= nonce + 1;
-                        state <= S_START_H1; // Vamos de novo!
+                        state <= S_START_H1; 
                     end
+                    
+                    default: state <= S_START_H1;
                 endcase
             end
         end

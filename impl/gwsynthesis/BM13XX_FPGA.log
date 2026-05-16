@@ -7,13 +7,13 @@ Analyzing Verilog file 'C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-fu
 Analyzing Verilog file 'C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\top_miner.v'
 Compiling module 'top_miner'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\top_miner.v":1)
 Compiling module 'spi_miner_interface'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":1)
-Extracting RAM for identifier 'fifo_mem'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":26)
-WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":44)
-WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":49)
-WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":54)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":56)
-WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":120)
-WARN  (EX3791) : Expression size 27 truncated to fit in target size 26("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":165)
+Extracting RAM for identifier 'fifo_mem'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":23)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":37)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":40)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":42)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":43)
+WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":113)
+WARN  (EX3791) : Expression size 27 truncated to fit in target size 26("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":163)
 Compiling module 'miner_core'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\miner_core.v":1)
 Compiling module 'sha256_transform'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha256_transform.v":38)
 Compiling module 'sha256_digester'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha256_transform.v":118)
@@ -23,6 +23,7 @@ Compiling module 'ch'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-fun
 Compiling module 'maj'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":55)
 Compiling module 's0'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":65)
 Compiling module 's1'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":76)
+WARN  (EX3791) : Expression size 29 truncated to fit in target size 28("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\miner_core.v":74)
 NOTE  (EX0101) : Current top module is "top_miner"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

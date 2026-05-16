@@ -25,7 +25,7 @@
     "SubInsts" : [
      {
       "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/miner_core.v",
-      "InstLine" : 46,
+      "InstLine" : 47,
       "InstName" : "core_engine",
       "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
       "ModuleLine" : 38,
