@@ -2,7 +2,23 @@
  "Device" : "GW5A-25A",
  "Files" : [
   {
-   "Path" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/SPI_com.v",
+   "Path" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/spi_job_receiver.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/miner_core.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/top_miner.v",
    "Type" : "verilog"
   }
  ],

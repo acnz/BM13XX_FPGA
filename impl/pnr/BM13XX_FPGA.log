@@ -7,7 +7,6 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
-WARN  (TA1132) :  'clk_100m' was determined to be a clock but was not created.
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -26,5 +25,5 @@ Generate file "C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\pnr\BM13XX_FPGA.pi
 Generate file "C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\pnr\BM13XX_FPGA.rpt.html" completed
 Generate file "C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\pnr\BM13XX_FPGA.rpt.txt" completed
 Generate file "C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\pnr\BM13XX_FPGA.tr.html" completed
-Thu May 14 23:37:47 2026
+Sat May 16 00:05:28 2026
 

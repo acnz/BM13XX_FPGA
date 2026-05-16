@@ -1,10 +1,98 @@
 [
  {
-  "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/SPI_com.v",
+  "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/top_miner.v",
   "InstLine" : 1,
-  "InstName" : "spi_slave_pingpong",
-  "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/SPI_com.v",
+  "InstName" : "top_miner",
+  "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/top_miner.v",
   "ModuleLine" : 1,
-  "ModuleName" : "spi_slave_pingpong"
+  "ModuleName" : "top_miner",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/top_miner.v",
+    "InstLine" : 27,
+    "InstName" : "spi_inst",
+    "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/spi_job_receiver.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "spi_miner_interface"
+   },
+   {
+    "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/top_miner.v",
+    "InstLine" : 50,
+    "InstName" : "core_inst",
+    "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/miner_core.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "miner_core",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/miner_core.v",
+      "InstLine" : 46,
+      "InstName" : "core_engine",
+      "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+      "ModuleLine" : 38,
+      "ModuleName" : "sha256_transform",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+        "InstLine" : 78,
+        "InstName" : "HASHERS[0].U",
+        "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+        "ModuleLine" : 118,
+        "ModuleName" : "sha256_digester",
+        "SubInsts" : [
+         {
+          "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+          "InstLine" : 132,
+          "InstName" : "e0_blk",
+          "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+          "ModuleLine" : 25,
+          "ModuleName" : "e0"
+         },
+         {
+          "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+          "InstLine" : 133,
+          "InstName" : "e1_blk",
+          "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+          "ModuleLine" : 35,
+          "ModuleName" : "e1"
+         },
+         {
+          "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+          "InstLine" : 134,
+          "InstName" : "ch_blk",
+          "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+          "ModuleLine" : 45,
+          "ModuleName" : "ch"
+         },
+         {
+          "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+          "InstLine" : 135,
+          "InstName" : "maj_blk",
+          "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+          "ModuleLine" : 55,
+          "ModuleName" : "maj"
+         },
+         {
+          "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+          "InstLine" : 136,
+          "InstName" : "s0_blk",
+          "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+          "ModuleLine" : 65,
+          "ModuleName" : "s0"
+         },
+         {
+          "InstFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha256_transform.v",
+          "InstLine" : 137,
+          "InstName" : "s1_blk",
+          "ModuleFile" : "C:/Users/andre/Documents/FPGA/BM13XX_FPGA/src/sha-256-functions.v",
+          "ModuleLine" : 76,
+          "ModuleName" : "s1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
  }
 ]

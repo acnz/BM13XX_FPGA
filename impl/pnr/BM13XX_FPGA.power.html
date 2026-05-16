@@ -69,7 +69,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
-<td>---</td>
+<td>C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\time.sdc</td>
 </tr>
 <tr>
 <td class="label">Tool Version</td>
@@ -89,7 +89,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Thu May 14 23:37:47 2026
+<td>Sat May 16 00:05:28 2026
 </td>
 </tr>
 <tr>
@@ -161,22 +161,22 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>55.165</td>
+<td>55.881</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
-<td>53.422</td>
+<td>53.438</td>
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>1.743</td>
+<td>2.443</td>
 </tr>
 </table>
 <h2><a name="Thermal_Info">Thermal Information:</a></h2>
 <table class="summary_table">
 <tr>
 <td class="label">Junction Temperature</td>
-<td>26.865</td>
+<td>26.889</td>
 </tr>
 <tr>
 <td class="label">Theta JA</td>
@@ -184,7 +184,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Max Allowed Ambient Temperature</td>
-<td>83.135</td>
+<td>83.111</td>
 </tr>
 </table>
 <h2><a name="Supply_Summary">Supply Information:</a></h2>
@@ -199,23 +199,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>0.900</td>
-<td>0.238</td>
+<td>1.710</td>
 <td>30.001</td>
-<td>27.215</td>
+<td>28.540</td>
 </tr>
 <tr>
 <td>VCCX</td>
 <td>3.300</td>
-<td>0.232</td>
+<td>0.137</td>
 <td>3.000</td>
-<td>10.665</td>
+<td>10.352</td>
 </tr>
 <tr>
 <td>VCCIO33</td>
 <td>3.300</td>
-<td>0.232</td>
-<td>1.006</td>
-<td>4.086</td>
+<td>0.137</td>
+<td>1.011</td>
+<td>3.789</td>
 </tr>
 <tr>
 <td>VCC_LDO</td>
@@ -236,15 +236,15 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.011</td>
+<td>1.418</td>
 <td>NA</td>
-<td>12.500</td>
+<td>6.250</td>
 </tr>
 <tr>
 <td>IO</td>
-<td>5.506
-<td>3.773
-<td>27.083
+<td>5.019
+<td>3.994
+<td>12.500
 </tr>
 </table>
 <h2><a name="By_Hierarchy">Power By Hierarchy:</a></h2>
@@ -255,9 +255,49 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Block Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>spi_slave_pingpong</td>
-<td>0.011</td>
-<td>0.011(0.000)</td>
+<td>top_miner</td>
+<td>1.418</td>
+<td>1.418(1.418)</td>
+<tr>
+<td>top_miner/core_inst/</td>
+<td>1.264</td>
+<td>1.264(1.077)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/</td>
+<td>1.077</td>
+<td>1.077(0.375)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/</td>
+<td>0.375</td>
+<td>0.375(0.034)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/ch_blk/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/e0_blk/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/e1_blk/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/maj_blk/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/s0_blk/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top_miner/core_inst/core_engine/HASHERS[0].U/s1_blk/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top_miner/spi_inst/</td>
+<td>0.154</td>
+<td>0.154(0.000)</td>
 </table>
 <h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
 <table class="detail_table">
@@ -267,9 +307,9 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Total Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>clk_100m</td>
-<td>100.000</td>
-<td>0.011</td>
+<td>clk_50m</td>
+<td>50.000</td>
+<td>1.418</td>
 </tr>
 </table>
 </div><!-- content -->

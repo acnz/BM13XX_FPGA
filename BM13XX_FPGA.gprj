@@ -5,7 +5,13 @@
     <Version>5</Version>
     <Device name="GW5A-25A" pn="GW5A-LV25MG121NC1/I0">gw5a25a-002</Device>
     <FileList>
-        <File path="src/SPI_com.v" type="file.verilog" enable="1"/>
+        <File path="src/SPI_com.v" type="file.verilog" enable="0"/>
+        <File path="src/miner_core.v" type="file.verilog" enable="1"/>
+        <File path="src/sha-256-functions.v" type="file.verilog" enable="1"/>
+        <File path="src/sha256_transform.v" type="file.verilog" enable="1"/>
+        <File path="src/spi_job_receiver.v" type="file.verilog" enable="1"/>
+        <File path="src/top_miner.v" type="file.verilog" enable="1"/>
         <File path="src/BM13XX_FPGA.cst" type="file.cst" enable="1"/>
+        <File path="src/time.sdc" type="file.sdc" enable="1"/>
     </FileList>
 </Project>

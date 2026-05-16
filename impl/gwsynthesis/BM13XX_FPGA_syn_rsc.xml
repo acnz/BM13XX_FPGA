@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="spi_slave_pingpong" Register="26" Lut="17" T_Register="26(26)" T_Lut="17(17)"/>
+<Module name="top_miner" T_Register="2787(0)" T_Alu="609(0)" T_Lut="1967(0)">
+ <SubModule name="spi_inst" Register="917" Alu="33" Lut="151" T_Register="917(917)" T_Alu="33(33)" T_Lut="151(151)"/>
+ <SubModule name="core_inst" Register="846" Lut="603" T_Register="1870(846)" T_Alu="576(0)" T_Lut="1816(603)">
+  <SubModule name="core_engine" Register="256" Alu="384" Lut="798" T_Register="1024(256)" T_Alu="576(384)" T_Lut="1213(798)">
+   <SubModule name="HASHERS[0].U" Register="768" Alu="192" Lut="223" T_Register="768(768)" T_Alu="192(192)" T_Lut="415(223)">
+    <SubModule name="e0_blk" Lut="32" T_Lut="32(32)"/>
+    <SubModule name="e1_blk" Lut="32" T_Lut="32(32)"/>
+    <SubModule name="ch_blk" Lut="32" T_Lut="32(32)"/>
+    <SubModule name="maj_blk" Lut="32" T_Lut="32(32)"/>
+    <SubModule name="s0_blk" Lut="32" T_Lut="32(32)"/>
+    <SubModule name="s1_blk" Lut="32" T_Lut="32(32)"/>
+   </SubModule>
+  </SubModule>
+ </SubModule>
+</Module>

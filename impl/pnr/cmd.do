@@ -3,6 +3,7 @@
 -pn GW5A-LV25MG121NC1/I0
 -cst C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\BM13XX_FPGA.cst
 -cfg C:\Users\andre\Documents\FPGA\BM13XX_FPGA\impl\pnr\device.cfg
+-sdc C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\time.sdc
 -bit
 -tr
 -ph
