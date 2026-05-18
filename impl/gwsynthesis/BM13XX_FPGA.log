@@ -15,15 +15,14 @@ WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("C:\Users\
 WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":113)
 WARN  (EX3791) : Expression size 27 truncated to fit in target size 26("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\spi_job_receiver.v":163)
 Compiling module 'miner_core'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\miner_core.v":1)
-Compiling module 'sha256_transform'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha256_transform.v":38)
-Compiling module 'sha256_digester'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha256_transform.v":118)
+Compiling module 'sha256_transform'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha256_transform.v":4)
+Compiling module 'sha256_digester'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha256_transform.v":61)
 Compiling module 'e0'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":25)
 Compiling module 'e1'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":35)
 Compiling module 'ch'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":45)
 Compiling module 'maj'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":55)
 Compiling module 's0'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":65)
 Compiling module 's1'("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\sha-256-functions.v":76)
-WARN  (EX3791) : Expression size 29 truncated to fit in target size 28("C:\Users\andre\Documents\FPGA\BM13XX_FPGA\src\miner_core.v":82)
 NOTE  (EX0101) : Current top module is "top_miner"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
